@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    audio {
+      width: 400px;
+    }
+    .mask {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, .5);
+    }
+    .dialog {
+      width: 400px;
+      height: 200px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <audio
+    id="music"
+    src="/assets/欧尼酱快起床.mp3"
+    controls
+  >
+  </audio>
+  <div class="mask" id="mask">
+    <div class="dialog">
+      <span>由于您的浏览器设置，音频无法自动播放</span><br>
+      <button onclick="play()">我知道了</button>
+    </div>
+  </div>
+  <script>
+    function play() {
+      music.play()
+      mask.style.display = 'none'
+    }
+  </script>
+</body>
+</html>
